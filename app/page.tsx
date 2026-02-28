@@ -337,7 +337,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl"
+            className="mx-auto max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl"
           >
             No Brokers. No Delays.
             <br />
@@ -429,7 +429,7 @@ export default function Home() {
         <div className="absolute inset-0 shimmer pointer-events-none" />
         <div className="relative mx-auto max-w-4xl text-center">
           <Reveal>
-            <h2 className="text-3xl font-bold sm:text-5xl">
+            <h2 className="font-serif text-3xl font-bold sm:text-5xl">
               We Fund Businesses.{" "}
               <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                 Period.
@@ -484,7 +484,7 @@ export default function Home() {
           </StaggerContainer>
 
           <Reveal delay={0.3}>
-            <p className="mt-16 text-2xl font-semibold">
+            <p className="mt-16 font-serif text-2xl font-semibold">
               You run your business.{" "}
               <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                 We provide the capital.
@@ -502,7 +502,7 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                 Our Solutions
               </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+              <h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">
                 Capital Programs Built for{" "}
                 <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                   Speed
@@ -579,7 +579,7 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                 The Difference
               </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+              <h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">
                 Why Wholesale Funding Solutions{" "}
                 <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                   Wins
@@ -633,7 +633,7 @@ export default function Home() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                 How It Works
               </p>
-              <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+              <h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">
                 The Process Is{" "}
                 <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                   Simple
@@ -690,7 +690,7 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
               Who We Serve
             </p>
-            <h2 className="mt-3 text-3xl font-bold sm:text-5xl">
+            <h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">
               We Work With{" "}
               <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                 Operators
@@ -741,7 +741,7 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-4xl text-center">
           <Reveal>
-            <h2 className="text-3xl font-bold sm:text-5xl">
+            <h2 className="font-serif text-3xl font-bold sm:text-5xl">
               Stop Waiting on{" "}
               <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                 Banks
@@ -785,7 +785,7 @@ export default function Home() {
       <section className="py-28 px-6">
         <Reveal>
           <div className="mx-auto max-w-3xl rounded-2xl border border-card-border bg-gradient-to-br from-white to-accent-light p-12 text-center shadow-xl sm:p-16">
-            <h2 className="text-3xl font-bold sm:text-5xl">
+            <h2 className="font-serif text-3xl font-bold sm:text-5xl">
               Ready to{" "}
               <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
                 Move
@@ -893,7 +893,7 @@ function ProgramCard({
       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-light transition-colors group-hover:bg-accent/20">
         <Icon className="h-6 w-6 text-accent" />
       </div>
-      <h3 className="mt-4 text-lg font-bold">{title}</h3>
+      <h3 className="mt-4 font-serif text-lg font-bold">{title}</h3>
       <p className="mt-2 text-sm text-muted">{description}</p>
       <ul className="mt-5 flex-1 space-y-2.5">
         {items.map((item) => (
@@ -932,7 +932,7 @@ function ComparisonCard({
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-[#4ecdc4]" />
       )}
       <h3
-        className={`text-xl font-bold ${negative ? "text-muted" : "text-accent"}`}
+        className={`font-serif text-xl font-bold ${negative ? "text-muted" : "text-accent"}`}
       >
         {label}
       </h3>
@@ -971,7 +971,7 @@ function ProcessStep({
           {step}
         </span>
       </motion.div>
-      <h3 className="mt-6 text-xl font-bold">{title}</h3>
+      <h3 className="mt-6 font-serif text-xl font-bold">{title}</h3>
       <p className="mt-3 text-sm text-muted leading-relaxed">{description}</p>
     </div>
   );
