@@ -885,8 +885,8 @@ export default function ApplyPage() {
   }
 
   // Input class helper
-  const inputClass = "w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2aafab]/20 focus:border-[#2aafab] transition-colors";
-  const selectClass = "w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2aafab]/20 focus:border-[#2aafab] transition-colors bg-white";
+  const inputClass = "w-full min-h-[44px] px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2aafab]/20 focus:border-[#2aafab] transition-colors";
+  const selectClass = "w-full min-h-[44px] px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#2aafab]/20 focus:border-[#2aafab] transition-colors bg-white";
   const labelClass = "block text-sm font-medium text-gray-700 mb-2";
 
   return (
@@ -1903,7 +1903,7 @@ export default function ApplyPage() {
                       <SignatureCanvas
                         ref={signatureRef}
                         canvasProps={{
-                          className: 'w-full h-40 bg-gray-50',
+                          className: 'w-full h-32 sm:h-40 bg-gray-50',
                         }}
                       />
                     </div>
@@ -1931,7 +1931,7 @@ export default function ApplyPage() {
                         <SignatureCanvas
                           ref={secondSignatureRef}
                           canvasProps={{
-                            className: 'w-full h-40 bg-gray-50',
+                            className: 'w-full h-32 sm:h-40 bg-gray-50',
                           }}
                         />
                       </div>
@@ -1957,13 +1957,13 @@ export default function ApplyPage() {
           </AnimatePresence>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-8">
+          <div className="flex flex-col-reverse gap-3 mt-8 sm:flex-row sm:justify-between">
             <button
               type="button"
               onClick={prevStep}
               disabled={currentStep === 1}
               className={`
-                flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors
+                flex min-h-[44px] items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors
                 ${currentStep === 1
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                   : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'}
@@ -1978,7 +1978,7 @@ export default function ApplyPage() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={isSubmitting}
-                className="flex items-center gap-2 px-8 py-3 bg-[#2aafab] text-white font-medium rounded-lg hover:bg-[#238e8b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex min-h-[44px] items-center justify-center gap-2 px-8 py-3 bg-[#2aafab] text-white font-medium rounded-lg hover:bg-[#238e8b] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
@@ -1996,7 +1996,7 @@ export default function ApplyPage() {
               <button
                 type="button"
                 onClick={nextStep}
-                className="flex items-center gap-2 px-6 py-3 bg-[#0f172a] text-white font-medium rounded-lg hover:bg-[#1e293b] transition-colors"
+                className="flex min-h-[44px] items-center justify-center gap-2 px-6 py-3 bg-[#0f172a] text-white font-medium rounded-lg hover:bg-[#1e293b] transition-colors"
               >
                 Continue
                 <ChevronRightIcon className="w-5 h-5" />

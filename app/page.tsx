@@ -249,7 +249,7 @@ export default function Home() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-80 bg-white shadow-2xl"
+              className="absolute right-0 top-0 h-full w-[75vw] max-w-80 bg-white shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-center justify-between p-6 border-b border-card-border">
@@ -306,12 +306,12 @@ export default function Home() {
 
         {/* Floating orbs */}
         <motion.div
-          className="absolute top-1/4 left-[15%] h-72 w-72 rounded-full bg-accent/10 blur-3xl"
+          className="absolute top-1/4 left-[15%] hidden h-72 w-72 rounded-full bg-accent/10 blur-3xl sm:block"
           animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-[10%] h-96 w-96 rounded-full bg-accent/8 blur-3xl"
+          className="absolute bottom-1/4 right-[10%] hidden h-96 w-96 rounded-full bg-accent/8 blur-3xl md:block"
           animate={{ y: [0, 20, 0], x: [0, -20, 0] }}
           transition={{
             duration: 10,
@@ -337,7 +337,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="mx-auto max-w-4xl font-serif text-4xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl"
+            className="mx-auto max-w-4xl font-serif text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
             No Brokers. No Delays.
             <br />
@@ -349,7 +349,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-300/90"
+            className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-gray-300/90 sm:mt-8 sm:text-lg"
           >
             When your business needs capital, you don&rsquo;t need a middleman.
             You need execution. Wholesale Funding Solutions provides fast, direct
@@ -359,15 +359,15 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
-            className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+            className="mt-10 flex w-full max-w-md flex-col items-center gap-4 sm:mt-12 sm:w-auto sm:max-w-none sm:flex-row sm:justify-center"
           >
             <motion.a
               href="/apply"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative rounded-lg bg-accent px-10 py-4 text-base font-bold text-white transition-all glow-accent"
+              className="group relative w-full rounded-lg bg-accent px-10 py-4 text-center text-base font-bold text-white transition-all glow-accent sm:w-auto"
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="relative z-10 flex items-center justify-center gap-2">
                 APPLY NOW
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
@@ -376,7 +376,7 @@ export default function Home() {
               href="/apply"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="rounded-lg border-2 border-accent px-10 py-4 text-base font-bold text-accent backdrop-blur-sm transition-all hover:bg-accent hover:text-white"
+              className="w-full rounded-lg border-2 border-accent px-10 py-4 text-center text-base font-bold text-accent backdrop-blur-sm transition-all hover:bg-accent hover:text-white sm:w-auto"
             >
               GET APPROVED TODAY
             </motion.a>
@@ -387,7 +387,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.7 }}
-            className="mx-auto mt-20 flex max-w-2xl flex-wrap items-center justify-center gap-8 sm:gap-16"
+            className="mx-auto mt-14 flex max-w-2xl flex-wrap items-center justify-center gap-6 sm:mt-20 sm:gap-16"
           >
             {[
               { value: 750, prefix: "$", suffix: "K+", label: "Max Funding" },
@@ -395,7 +395,7 @@ export default function Home() {
               { value: 98, suffix: "%", label: "Approval Rate" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-3xl font-bold text-accent">
+                <div className="text-2xl font-bold text-accent sm:text-3xl">
                   <Counter
                     target={stat.value}
                     prefix={stat.prefix}
@@ -734,7 +734,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-hero-bg py-28 px-6 text-white">
         <div className="absolute inset-0 grid-bg opacity-30" />
         <motion.div
-          className="absolute top-1/3 right-[5%] h-80 w-80 rounded-full bg-accent/10 blur-3xl"
+          className="absolute top-1/3 right-[5%] hidden h-80 w-80 rounded-full bg-accent/10 blur-3xl sm:block"
           animate={{ y: [0, -20, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -800,25 +800,25 @@ export default function Home() {
             <p className="mt-4 font-semibold text-accent">
               Direct capital. Fast execution. Wholesale structure.
             </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-10 flex w-full max-w-md flex-col items-center gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:justify-center">
               <motion.a
                 href="/apply"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group rounded-lg bg-accent px-10 py-4 text-base font-bold text-white transition-all glow-accent"
+                className="group w-full rounded-lg bg-accent px-10 py-4 text-center text-base font-bold text-white transition-all glow-accent sm:w-auto"
               >
-                <span className="flex items-center gap-2">
+                <span className="flex items-center justify-center gap-2">
                   START YOUR APPLICATION
                   <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </span>
               </motion.a>
               <motion.a
-                href="/apply"
+                href="tel:+1XXXXXXXXXX"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="rounded-lg border border-accent px-10 py-4 text-base font-bold text-accent transition-all hover:bg-accent/5"
+                className="w-full rounded-lg border border-accent px-10 py-4 text-center text-base font-bold text-accent transition-all hover:bg-accent/5 sm:w-auto"
               >
-                SPEAK TO A SPECIALIST
+                CALL A SPECIALIST
               </motion.a>
             </div>
           </div>
