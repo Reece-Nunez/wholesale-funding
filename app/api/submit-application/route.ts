@@ -439,7 +439,7 @@ export async function POST(request: NextRequest) {
     const { data, error } = await resendClient.emails.send({
       from: 'Wholesale Funding Solutions <applications@wholesalefundingsolutions.com>',
       to: ['submissions@wholesalefundingsolutions.com'],
-      subject: `New Funding Application - ${applicationData.legalBusinessName} - ${formatCurrency(applicationData.amountRequested)}`,
+      subject: `[WFS] New Funding Application - ${applicationData.legalBusinessName} - ${formatCurrency(applicationData.amountRequested)}`,
       html: emailHtml,
       attachments: allAttachments,
     });
