@@ -813,7 +813,7 @@ export default function Home() {
                 </span>
               </motion.a>
               <motion.a
-                href="tel:+1XXXXXXXXXX"
+                href="tel:+18887300388"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-full rounded-lg border border-accent px-10 py-4 text-center text-base font-bold text-accent transition-all hover:bg-accent/5 sm:w-auto"

@@ -228,9 +228,7 @@ export async function POST(request: NextRequest) {
       .substring(0, 30);
     const pdfFilename = `Application_${sanitizedBusinessName}_${new Date().toISOString().split('T')[0]}.pdf`;
 
-    // Logo URL hosted on S3
-    // TODO: Host WFS logo on S3 or similar and update this URL
-    const logoUrl = '';
+    const logoUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/logo.png`;
 
     // Professional email body with logo
     const emailHtml = `
