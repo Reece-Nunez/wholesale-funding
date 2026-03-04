@@ -32,7 +32,12 @@ import {
   CogIcon,
   WrenchIcon,
   ScissorsIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import ContactForm from "./components/ContactForm";
 
 // ─── Animated Counter ─────────────────────────────────────────
 function Counter({
@@ -164,6 +169,7 @@ export default function Home() {
     { href: "#why-us", label: "Why Us" },
     { href: "#process", label: "Process" },
     { href: "#industries", label: "Industries" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -825,6 +831,93 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* ── Contact Section ──────────────────────────────────── */}
+      <section id="contact" className="bg-card-bg py-24 px-6">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <div className="text-center">
+              <span className="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-accent uppercase">
+                Get In Touch
+              </span>
+              <h2 className="mt-4 font-serif text-3xl font-bold text-foreground sm:text-4xl">
+                Let&rsquo;s Talk About Your{" "}
+                <span className="bg-gradient-to-r from-accent to-[#4ecdc4] bg-clip-text text-transparent">
+                  Funding Needs
+                </span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
+                Have questions? Reach out directly or fill out the form below and a specialist will contact you.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-5">
+            {/* Contact Info */}
+            <div className="lg:col-span-2">
+              <Reveal>
+                <div className="space-y-8">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                      <PhoneIcon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Phone</h3>
+                      <a
+                        href="tel:+18887300388"
+                        className="mt-1 block text-muted transition hover:text-accent"
+                      >
+                        (888) 730-0388
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                      <EnvelopeIcon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Email</h3>
+                      <a
+                        href="mailto:info@wholesalefundingsolutions.com"
+                        className="mt-1 block text-muted transition hover:text-accent"
+                      >
+                        info@wholesalefundingsolutions.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                      <MapPinIcon className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground">Office</h3>
+                      <p className="mt-1 text-muted">
+                        203 North LaSalle Street<br />
+                        Chicago, IL 60601
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Contact Form */}
+            <div className="lg:col-span-3">
+              <Reveal>
+                <div className="rounded-xl border border-card-border bg-white p-8 shadow-sm">
+                  <GoogleReCaptchaProvider
+                    reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                  >
+                    <ContactForm />
+                  </GoogleReCaptchaProvider>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer ─────────────────────────────────────────── */}
       <footer className="border-t border-card-border bg-hero-bg py-14 px-6 text-white">
         <div className="mx-auto max-w-6xl">
@@ -840,6 +933,16 @@ export default function Home() {
               <p className="mt-3 text-sm text-gray-400">
                 203 North LaSalle Street, Chicago, IL 60601
               </p>
+              <div className="mt-3 flex flex-col gap-1.5 text-sm text-gray-400 sm:flex-row sm:gap-4">
+                <a href="tel:+18887300388" className="flex items-center justify-center gap-1.5 transition hover:text-accent sm:justify-start">
+                  <PhoneIcon className="h-4 w-4" />
+                  (888) 730-0388
+                </a>
+                <a href="mailto:info@wholesalefundingsolutions.com" className="flex items-center justify-center gap-1.5 transition hover:text-accent sm:justify-start">
+                  <EnvelopeIcon className="h-4 w-4" />
+                  info@wholesalefundingsolutions.com
+                </a>
+              </div>
             </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400">
               {navLinks.map((link) => (
