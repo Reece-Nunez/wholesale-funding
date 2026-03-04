@@ -60,10 +60,19 @@ export default function ContactForm() {
     }
   }, [executeRecaptcha, formData]);
 
+  const formatPhone = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 10);
+    if (digits.length === 0) return '';
+    if (digits.length <= 3) return `(${digits}`;
+    if (digits.length <= 6) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+    return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: name === 'phone' ? formatPhone(value) : value,
     }));
   };
 
@@ -129,7 +138,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             className="w-full rounded-md border border-gray-300 px-4 py-3 text-base outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-accent"
-            placeholder="(555) 000-0000"
+            placeholder="(111) 111-1111"
           />
         </div>
       </div>
